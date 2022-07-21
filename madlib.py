@@ -4,7 +4,7 @@ def read_template(filepath):
   with open(filepath) as file:
     cont = file.read().strip()
     return cont
-
+a
 def parse_template():
   with open(filepath) as file:
     cont = file.read().strip()
