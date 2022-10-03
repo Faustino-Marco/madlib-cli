@@ -30,40 +30,42 @@ def parse_template(str):
 def merge(str, tup):
     return str.format(*tup)
 
-#create program
-print("""
-*************************************
-* * * * Welcome to MarcLib! * * * * *
+if __name__ == "__main__":
+        
+    #create program
+    print("""
+    *************************************
+    * * * * Welcome to MarcLib! * * * * *
 
-Here you'll be prompted for words and
-you'll get back a full story.
+    Here you'll be prompted for words and
+    you'll get back a full story.
 
-Bon Voyage!
+    Bon Voyage!
 
-- Marco, CEO & Founder, MarcLib Inc.
-*************************************
-""")
+    - Marco, CEO & Founder, MarcLib Inc.
+    *************************************
+    """)
 
-filepath = "assets/dark_and_stormy_night_template.txt"
+    filepath = "assets/dark_and_stormy_night_template.txt"
 
-stripped, parts = parse_template(read_template(filepath))
+    stripped, parts = parse_template(read_template(filepath))
 
-responses = []
-for x in parts:
-    if x.lower() == "adjective":
-        print(f"Enter an {x}")
-        response = input("> ")
-        responses.append(response)
+    responses = []
+    for x in parts:
+        if x.lower() == "adjective":
+            print(f"Enter an {x}")
+            response = input("> ")
+            responses.append(response)
 
-    else:
-        print(f"Enter a {x}")
-        response = input("> ")
-        responses.append(response)
+        else:
+            print(f"Enter a {x}")
+            response = input("> ")
+            responses.append(response)
 
-answer = merge(stripped, tuple(responses))
-print(answer)
+    answer = merge(stripped, tuple(responses))
+    print(answer)
 
-#write answer to new file
-f = open("answers/answer.txt", "w")
-f.write(answer)
-f.close()
+    #write answer to new file
+    f = open("answers/answer.txt", "w")
+    f.write(answer)
+    f.close()
